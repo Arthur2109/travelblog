@@ -1,0 +1,23 @@
+<div
+  id="dropdowns-navigation"
+  class="lg:flex-1 lg:block hidden lg:static absolute top-12 left-0 w-full bg-white dark:bg-slate-900 lg:bg-transparent transform origin-top px-4 pb-4 lg:p-0 rounded-b lg:shadow-none shadow-xl z-40 text-base mt-4"
+  data-nav-target="nav"
+  data-transition-enter-active="transition ease-out duration-200"
+  data-transition-enter-from="opacity-0 scale-95"
+  data-transition-enter-to="opacity-100 scale-100"
+  data-transition-leave-from="opacity-100 scale-100"
+  data-transition-leave-active="transition ease-in duration-200"
+  data-transition-leave-to="opacity-0 scale-95"
+>
+  <nav role="secondary navigation">
+    <ul class="flex justify-center space-x-12">
+      <li class=>
+        <%= nav_link_to "Search Bar", articles_path, class:"nav-link"%>
+      </li>
+      <li >
+        <%= nav_link_to "Search Map", "/articles/map", class: "nav-link" %>
+      </li>
+    </ul>
+  </nav>
+</div>
+

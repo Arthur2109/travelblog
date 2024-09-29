@@ -1,0 +1,33 @@
+<% content_for :head do %>
+
+  <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+  
+<%end%>
+
+
+<article>
+  <div class="flex items-start space-x-6">
+  <%if article.try(:image).present?%>
+    <%= image_tag(article.image, class: "w-40 h-auto rounded-xl object-cover group-hover:scale-110 transition ease-in-out duration-300", alt: article.title) %>
+  <% end %>
+
+
+    <div class="flex-1">
+      <header>
+        <h1 class="font-semibold text-base dark:text-zinc-100"><%= article.title %></h1>
+      </header>
+
+      <div class="prose prose-zinc dark:prose-invert font-heading font-light my-3 max-w-md">
+        <p><%= article.topic %></p>
+      </div>
+    </div>
+  </div>
+<div class="mt-10">
+  <%= article.contenu%>
+</div>
+
+
+
+
+</article>

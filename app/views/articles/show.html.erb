@@ -1,0 +1,32 @@
+<div class="max-w-3xl mx-auto px-4 my-16">
+  <div class="pb-6 border-b dark:border-zinc-700 border-zinc-200">
+    <nav aria-label="breadcrumb" class="my-6 font-heading flex text-zinc-500 dark:text-zinc-200 text-sm">
+      <ol class="flex flex-wrap items-center space-x-3 list-none m-0 p-0">
+        <li>
+          <%= link_to "Articles", articles_path, class: "hover:underline text-primary-600 dark:text-primary-500" %>
+        </li>
+        <li class="flex space-x-3">
+          <div class="flex items-center">
+            <span class="text-zinc-300 dark:text-zinc-500">/</span>
+          </div>
+          <span class="text-zinc-600 dark:text-zinc-100" aria-current="page">
+            <%= @article.title %>
+          </span>
+        </li>
+      </ol>
+    </nav>
+
+
+  <%= render partial: "article", locals:{article:@article} %>
+
+  </div>
+
+  <div class="flex items-center justify-between">      
+    <%if signed_in? && current_user.admin?%>
+    <%= link_to "Edit", edit_article_path(@article), class: "btn btn-white mt-10" %>
+    <%end%>
+
+    <%= link_to "Comment", edit_article_path(@article), class: "btn btn-white mt-10" %>
+
+  </div>
+</div>
